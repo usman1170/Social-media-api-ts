@@ -30,25 +30,4 @@ const userSchema = new mongoose.Schema({
   phone: Number,
   active: Boolean,
 });
-const postSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  catagory: String,
-  date: {
-    type: Date,
-    default: Date.now,
-  },
-  inventory: Number,
-  onSale: {
-    type: Boolean,
-    default: false,
-  },
-});
-
-export { userSchema, postSchema };
+export { userSchema };
