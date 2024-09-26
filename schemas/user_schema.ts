@@ -8,11 +8,11 @@ const userSchema = new mongoose.Schema({
     minlength: 6,
     maxlength: 30,
     lowercase: true,
-    // enum: ["health", "photography", "developer", "travller"],
   },
   email: {
     type: String,
     required: true,
+    unique: true,
     validate(value: string) {
       if (!validator.isEmail(value)) {
         throw new Error("Email not validate");

@@ -1,7 +1,4 @@
-const mongoose = require("mongoose");
-const schemas = require("./schemas");
-
-const MyPosts = new mongoose.model("Post", schemas.postSchema);
+import { MyPosts } from "../models/models";
 
 const post1 = new MyPosts({
   title: "Mastering JavaScript: A Comprehensive Guide",
@@ -40,7 +37,6 @@ const post4 = new MyPosts({
 });
 
 module.exports = {
-  MyPosts,
   post1,
   post2,
   post3,
