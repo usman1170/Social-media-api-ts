@@ -5,8 +5,8 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    minlength: 6,
-    maxlength: 30,
+    minlength: 4,
+    maxlength: 20,
     lowercase: true,
   },
   email: {
@@ -27,7 +27,15 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  phone: Number,
-  active: Boolean,
+  phone: {
+    type: Number,
+    required: true,
+    unique: true,
+  },
+  active: {
+    type: Boolean,
+    default: false,
+  },
 });
+
 export { userSchema };
